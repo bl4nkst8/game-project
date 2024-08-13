@@ -1,4 +1,5 @@
 import pygame
+from character import Character
 
 
 class Window:
@@ -11,6 +12,7 @@ class Window:
         pygame.display.set_caption("My game!")
 
     def run(self):
+        character = Character(self.screen, 50, 50, 40, 60, 5)
         pygame.display.flip()
 
         self.screen.fill(self.BACKGROUND_COLOR)
@@ -20,6 +22,8 @@ class Window:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+
+            character.draw()
 
             pygame.display.flip()
 
