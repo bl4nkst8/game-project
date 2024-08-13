@@ -10,7 +10,7 @@ If you'd like to try out the game yourself, please follow these steps:
 3. **Run the game**: Use any of the Batch scripts (windows.bat/linux-mac.bat) depending on your OS to run the game.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Boost Software License 1.0](LICENSE).
 
 ## Contact
 For any inquiries or feedback, please reach out to @paganking or @idkmelissa_ on Discord.
