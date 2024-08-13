@@ -7,7 +7,8 @@ Welcome to **Game Project Name**! This is a [brief description of the game TBA],
 If you'd like to try out the game yourself, please follow these steps:
 1. **Install Python**: [Python3](https://www.python.org/downloads/)
 2. **Install dependencies**: `pip install pygame`
-3. **Run the game**: Use any of the Batch scripts (windows.bat/linux-mac.bat) depending on your OS to run the game.
+3. **Download source code**: Use the *Code -> Download ZIP* button to download the program's source code.
+4. **Run the game**: Use any of the Batch scripts (windows.bat/linux-mac.bat) depending on your OS to run the game.
 
 ## License
 This project is licensed under the [Boost Software License 1.0](LICENSE).
