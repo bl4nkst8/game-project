@@ -13,3 +13,10 @@ class Character:
     def draw(self):
         pygame.draw.rect(self.window, (255, 0, 0), (self.x, self.y, self.width, self.height))
         pygame.display.update()
+
+    def movement(self, dx, dy):
+        self.x += self.vel * dx
+        self.y += self.vel * dy
+  
+
+
