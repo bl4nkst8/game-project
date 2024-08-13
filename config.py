@@ -20,3 +20,15 @@ PLAYER_JUMP_STRENGTH = -12
 
 # Physics constants
 WORLD_GRAVITY = 0.5
+
+# World constants
+TILE_SIZE = 32
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GRAY = (100, 100, 100)
+
+TILE_TYPES = {
+    '#': GRAY,   # Wall
+    '.': WHITE,  # Floor
+}
+

@@ -1,5 +1,6 @@
 import pygame
 from character import Character
+from tilemap import Tilemap
 
 from config import (WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE,
                     BACKGROUND_COLOR,
