@@ -4,7 +4,8 @@ from character import Character
 from config import (WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE,
                     BACKGROUND_COLOR,
                     PLAYER_DEFAULT_X, PLAYER_DEFAULT_Y,
-                    PLAYER_WIDTH, PLAYER_HEIGHT, PLAYER_SPEED)
+                    PLAYER_WIDTH, PLAYER_HEIGHT, PLAYER_SPEED, PLAYER_JUMP_STRENGTH,
+                    DEBUG)
 
 
 class Window:
@@ -18,21 +19,21 @@ class Window:
 
     def run(self):
         character = Character(self.screen, PLAYER_DEFAULT_X, PLAYER_DEFAULT_Y,
-                              PLAYER_WIDTH, PLAYER_HEIGHT, PLAYER_SPEED)
+                              PLAYER_WIDTH, PLAYER_HEIGHT, PLAYER_SPEED, PLAYER_JUMP_STRENGTH)
 
-        keys = []
+        clock = pygame.time.Clock()
+        last_fps_count = 0
 
         running = True
         while running:
+            if DEBUG and int(clock.get_fps()) != last_fps_count:
+                last_fps_count = int(clock.get_fps())
+                pygame.display.set_caption(f'{WINDOW_TITLE} - {last_fps_count}FPS')
+
+            keys = pygame.key.get_pressed()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key not in keys:
-                        keys.append(event.key)
-                elif event.type == pygame.KEYUP:
-                    if event.key in keys:
-                        keys.remove(event.key)
 
             self.screen.fill(self.BACKGROUND_COLOR)
 
@@ -40,5 +41,6 @@ class Window:
             character.draw()
 
             pygame.display.flip()
+            clock.tick(60)
 
         pygame.quit()

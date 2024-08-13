@@ -1,3 +1,6 @@
+# Used for development
+DEBUG = True
+
 # Window constants
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -12,4 +15,8 @@ PLAYER_DEFAULT_Y = 50
 PLAYER_WIDTH = 40
 PLAYER_HEIGHT = 60
 
-PLAYER_SPEED = 0.3
+PLAYER_SPEED = 5
+PLAYER_JUMP_STRENGTH = -12
+
+# Physics constants
+WORLD_GRAVITY = 0.5
