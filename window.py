@@ -1,4 +1,5 @@
 import pygame
+from eventlistener import EventListener
 from character import Character
 
 
@@ -12,6 +13,7 @@ class Window:
         pygame.display.set_caption("My game!")
 
     def run(self):
+        event_listener = EventListener()
         character = Character(self.screen, 50, 50, 40, 60, 5)
         pygame.display.flip()
 
@@ -19,9 +21,7 @@ class Window:
 
         running = True
         while running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
+            event_listener.cycle()
 
             character.draw()
 
