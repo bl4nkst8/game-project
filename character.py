@@ -1,26 +1,15 @@
 import pygame
 
-x = 50
-y = 50
-width = 40
-height = 60
-vel = 5
-
 
 class Character:
-    def __init__(self, window):
+    def __init__(self, window, x, y, width, height, velocity):
+        self.window = window
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        self.vel = vel
-        self.window = window
-    
-    def run(self):
+        self.vel = velocity
 
-        running = True
-        while running:
-            pygame.time.delay(100)
-
-            pygame.draw.rect(self.window, (255, 0, 0), (x, y, width, height))
-            pygame.display.update()
+    def draw(self):
+        pygame.draw.rect(self.window, (255, 0, 0), (self.x, self.y, self.width, self.height))
+        pygame.display.update()
